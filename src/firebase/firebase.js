@@ -10,9 +10,13 @@ const config = {
     messagingSenderId: "867622070204"
 };
 
-firebase.initializeApp(config);
+const database = firebase.initializeApp(config);
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export {firebase as default} 
+export { firebase, googleAuthProvider, database as default}
+
+// export {googleAuthProvider, firebase as default}
+
 // //child_changed 
 // firebase.database().ref('expenses').on('child_changed', (snapshot) => {
 //     console.log(snapshot.key, snapshot.val())
